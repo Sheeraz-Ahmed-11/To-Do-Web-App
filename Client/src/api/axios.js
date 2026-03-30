@@ -1,13 +1,13 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000', // your backend URL
+    baseURL: 'to-do-web-app-production-e504.up.railway.app',
 });
 
 api.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token'); // ✅ read it
+    const token = localStorage.getItem('token');
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`; // ✅ send it
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
 });
