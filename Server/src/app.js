@@ -7,8 +7,9 @@ const routes = require("./routes/todo.routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true,
+  origin: "https://to-do-web-app.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  credentials: true
 }));
 app.use(cookieParser());
 
