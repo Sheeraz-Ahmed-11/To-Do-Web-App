@@ -7,13 +7,10 @@ const routes = require("./routes/todo.routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: [
-    "https://to-do-web-app-ochre.vercel.app",
-    "https://to-do-web-app-git-main-sheeraz-ahmed-11s-projects.vercel.app"
-  ],
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  credentials: true
-}));
+  credentials: false
+}))
 app.use(cookieParser());
 
 
