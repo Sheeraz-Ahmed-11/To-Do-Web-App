@@ -10,7 +10,7 @@ app.use(cors({
     if (!origin || allowed.some(p => p.test(origin))) callback(null, true);
     else callback(new Error('Not allowed by CORS'));
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],  // ← added PATCH
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
